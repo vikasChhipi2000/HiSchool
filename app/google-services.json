@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "382302690299",
+    "project_id": "hischool-d2be6",
+    "storage_bucket": "hischool-d2be6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382302690299:android:111abcce8252ee0387095e",
+        "android_client_info": {
+          "package_name": "com.example.hischool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382302690299-m08p3u5c5f6q3kmqdiaadav054m5c41i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsFhu5ErglgQGbDPQGHBSsj3zpYJjpqI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382302690299-m08p3u5c5f6q3kmqdiaadav054m5c41i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
