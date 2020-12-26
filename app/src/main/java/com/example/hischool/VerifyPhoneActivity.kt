@@ -16,7 +16,6 @@ import com.google.firebase.auth.PhoneAuthProvider.OnVerificationStateChangedCall
 import kotlinx.android.synthetic.main.activity_verify_phone.*
 import java.util.concurrent.TimeUnit
 
-
 class VerifyPhoneActivity : AppCompatActivity() {
 
     private lateinit var mVerificationId: String

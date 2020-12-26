@@ -30,6 +30,7 @@ class DataRecyclerAdapter(private val files: ArrayList<File>, private val contex
         holder.view.downloadBtn.setOnClickListener {
             val intent = Intent(context,Browser::class.java)
             intent.putExtra("url",files[position].url)
+            intent.putExtra("type",files[position].type)
             startActivity(context,intent,null)
         }
     }

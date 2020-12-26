@@ -24,6 +24,7 @@ import kotlinx.android.synthetic.main.activity_browser.*
 class Browser : AppCompatActivity() {
     private lateinit var uri: Uri
     private var data:String? = null
+    private var type : String? = null;
     val list: ArrayList<Long> = ArrayList()
     private lateinit var downloadManager: DownloadManager
     private val REQUEST_CODE = 1
@@ -42,6 +43,16 @@ class Browser : AppCompatActivity() {
         data = intent.getStringExtra("url")
         val url = data!!.subSequence(33, data!!.length - 2).toString().trim()
         uri = Uri.parse(url)
+        type = intent.getStringExtra("type")
+        if(type != null){
+            type = type!!.subSequence(0, type!!.indexOf("/")).toString().trim()
+            Toast.makeText(this, type, Toast.LENGTH_SHORT).show()
+            if(type == "image" || type == "video"){
+                openBtn.visibility = View.VISIBLE
+            }else{
+                openBtn.visibility = View.INVISIBLE
+            }
+        }
 
         registerReceiver(
             onComplete,
@@ -53,6 +64,18 @@ class Browser : AppCompatActivity() {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
             ), REQUEST_CODE
         )
+    }
+
+    fun openClick(view : View){
+        if(type == "image"){
+            val intent = Intent(applicationContext,BrowserImageView::class.java)
+            intent.putExtra("url",uri.toString())
+            startActivity(intent)
+        }else if(type == "video"){
+            val intent = Intent(applicationContext,BrowserVideoView::class.java)
+            intent.putExtra("url",uri.toString())
+            startActivity(intent)
+        }
     }
 
     fun buttonClick(view : View) {
